@@ -13,19 +13,19 @@
     $pageIdx = ($page-1)*$pagePer + 1;
     $pageIdx -= 1;
     
-    $sql = "select * from userBoardtb order by boardDate asc limit $pageIdx, $pagePer;";
+    $sql = "select * from userboardtb order by boardDate asc limit $pageIdx, $pagePer;";
     $option = $_POST['sortOption'];
 	
 	if($option == "sortDate"){
-		$sql = "select * from userBoardtb order by boardDate desc limit $pageIdx, $pagePer;";
+		$sql = "select * from userboardtb order by boardDate desc limit $pageIdx, $pagePer;";
 	}else if($option == "sortOldDate"){
-		$sql = "select * from userBoardtb order by boardDate asc limit $pageIdx, $pagePer;";
+		$sql = "select * from userboardtb order by boardDate asc limit $pageIdx, $pagePer;";
 	}else if($option == "sortTitle"){
-		$sql = "select * from userBoardtb order by boardTitle asc limit $pageIdx, $pagePer;";
+		$sql = "select * from userboardtb order by boardTitle asc limit $pageIdx, $pagePer;";
 	}else if($option == "sortName"){
-		$sql = "select * from userBoardtb order by userId asc limit $pageIdx, $pagePer;";
+		$sql = "select * from userboardtb order by userId asc limit $pageIdx, $pagePer;";
 	}else if($option == "sortGood"){
-		$sql = "select * from userBoardtb order by boardGood desc limit $pageIdx, $pagePer;";
+		$sql = "select * from userboardtb order by boardGood desc limit $pageIdx, $pagePer;";
 	}
   
     $rst = mysqli_query($con, $sql);
