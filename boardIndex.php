@@ -6,7 +6,7 @@
     else
         $page = 1;
 
-    $cntSql = "select * from userBoardtb;";
+    $cntSql = "select * from userboardtb;";
     $cntRst = mysqli_query($con, $cntSql); 
     $cnt = mysqli_num_rows($cntRst);
     $pagePer = 10;
