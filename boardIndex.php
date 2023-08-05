@@ -6,26 +6,26 @@
     else
         $page = 1;
 
-    $cntSql = "select * from userboardtb;";
+    $cntSql = "select * from userBoardTB;";
     $cntRst = mysqli_query($con, $cntSql); 
     $cnt = mysqli_num_rows($cntRst);
     $pagePer = 10;
     $pageIdx = ($page-1)*$pagePer + 1;
     $pageIdx -= 1;
     
-    $sql = "select * from userboardtb order by boardDate asc limit $pageIdx, $pagePer;";
+    $sql = "select * from userBoardTB order by boardDate asc limit $pageIdx, $pagePer;";
     $option = $_POST['sortOption'];
 	
 	if($option == "sortDate"){
-		$sql = "select * from userboardtb order by boardDate desc limit $pageIdx, $pagePer;";
+		$sql = "select * from userBoardTB order by boardDate desc limit $pageIdx, $pagePer;";
 	}else if($option == "sortOldDate"){
-		$sql = "select * from userboardtb order by boardDate asc limit $pageIdx, $pagePer;";
+		$sql = "select * from userBoardTB order by boardDate asc limit $pageIdx, $pagePer;";
 	}else if($option == "sortTitle"){
-		$sql = "select * from userboardtb order by boardTitle asc limit $pageIdx, $pagePer;";
+		$sql = "select * from userBoardTB order by boardTitle asc limit $pageIdx, $pagePer;";
 	}else if($option == "sortName"){
-		$sql = "select * from userboardtb order by userId asc limit $pageIdx, $pagePer;";
+		$sql = "select * from userBoardTB order by userId asc limit $pageIdx, $pagePer;";
 	}else if($option == "sortGood"){
-		$sql = "select * from userboardtb order by boardGood desc limit $pageIdx, $pagePer;";
+		$sql = "select * from userBoardTB order by boardGood desc limit $pageIdx, $pagePer;";
 	}
   
     $rst = mysqli_query($con, $sql);
