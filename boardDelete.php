@@ -4,7 +4,7 @@ include('./connect.php');
 
 $boardIdx = $_GET['idx'];
 
-$delSql = "delete from userBoardTB where boardIdx = '$boardIdx';"; 
+$delSql = "delete from userBoardtb where boardIdx = '$boardIdx';"; 
 $delete = mysqli_query($con, $delSql);
 
 if($delete){
